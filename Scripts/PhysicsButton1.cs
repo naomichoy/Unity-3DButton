@@ -37,6 +37,12 @@ public class PhysicsButton1 : MonoBehaviour
             _isPressed = true;
         if (_isPressed && GetValue() - threshold <= 0)
             _isPressed = false;
+            
+        if (transform.localPosition.y > _startPos.y)
+        {
+            _isPressed = false;
+            transform.localPosition = new Vector3(0, _startPos.y, 0);
+        }
 
         // Debug.Log(_isPressed);
 
